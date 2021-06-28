@@ -1,0 +1,3 @@
+It is easy to be initially intimidated by pointers. Basic variable declarations in C are relatively intuitive - declare a type, specify a variable name, and define values directly using an equal (=) sign. Yet, pointers introduce an entirely different syntax that can appear strange at first - where in the world did the multiplication sign come from? And why is it being used on both sides of the equal sign?
+
+Trust me, I’ve been there. I’ve been in your shoes, and felt that the syntax behind pointers only introduced confusion and frustration. For this same reason, I want you to take my word for it - my professor was correct. Pointers do not have to be scary!
