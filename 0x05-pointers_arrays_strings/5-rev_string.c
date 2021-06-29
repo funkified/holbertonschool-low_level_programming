@@ -11,7 +11,7 @@ void rev_string(char *s)
 	int sindex, rIndex, i = 0;
 	char strcpy;
 
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		i++;
 	}
