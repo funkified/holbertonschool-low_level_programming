@@ -2,20 +2,23 @@
 
 /**
  * puts_half - prints half string
- * @s: string to print
+ * @str: string to print
  * Return: nothing
  */
 
 void puts_half(char *str)
 {
-	int i;
+	int i, j;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (i >= 5 && i <= 9)
-		{
-			_putchar(str[i]);
-		}
+		;
+	}
+	i += 1;
+
+	for (j = (i / 2); str[j] != '\0'; j++)
+	{
+		_putchar(str[j]);
 	}
 	_putchar('\n');
 }
