@@ -11,12 +11,12 @@ void rev_string(char *s)
 	int sindex, rIndex, i = 0;
 	char strcpy;
 
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		i++;
 	}
 
-	for (rIndex = (i - 1); rIndex > sindex; rIndex--)
+	for (rIndex = (i - 1); rIndex >= sindex; rIndex--)
 	{
 		strcpy = s[sindex];
 		s[sindex] = s[rIndex];
