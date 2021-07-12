@@ -12,9 +12,9 @@ int main(void)
 
 	for (e1 = 0; e1 < 100; e1++)
 	{
-		for (e1 = 0; e2 < 100; e2++)
+		for (e2 = 0; e2 < 100; e2++)
 		{
-			if (e1 < e2)
+			if (e1 < e2 && e1 != e2)
 			{
 				putchar((e1 / 10) + 48);
 				putchar((e1 % 10) + 48);
