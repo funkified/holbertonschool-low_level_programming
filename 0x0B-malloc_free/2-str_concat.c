@@ -19,6 +19,11 @@ char *str_concat(char *s1, char *s2)
 		printf(" ");
 		return (NULL);
 	}
+	
+	if (*s1 == NULL)
+	{
+		return (NULL);
+	}
 
 	ptr = malloc(sizeof(char) * (_strlen(s1) + (_strlen(s2) + 1)));
 
