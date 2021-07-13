@@ -16,19 +16,23 @@ char *_strdup(char *str)
 	size = _strlen(str);
 	dup_str = malloc(sizeof(char) * size + 1);
 
-	if (str == NULL)
+	if (str == 0)
 		return (NULL);
 
 	ptr = dup_str;
 
 	if (ptr == NULL)
-		return (NULL);
-
-	while (*str)
 	{
-		*ptr = *str;
-		ptr++;
-		str++;
+		return (NULL);
+	}
+	else
+	{
+		while (*str)
+		{
+			*ptr = *str;
+			ptr++;
+			str++;
+		}
 	}
 	*ptr = '\0';
 
