@@ -32,3 +32,14 @@ char *_strdup(char *str)
 	return (dup_str);
 	free(dup_str);
 }
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*s != '\0')
+	{
+		s++;
+		len++;
+	}
+	return (len);
+}
