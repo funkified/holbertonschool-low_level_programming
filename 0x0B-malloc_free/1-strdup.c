@@ -21,6 +21,9 @@ char *_strdup(char *str)
 
 	ptr = dup_str;
 
+	if (ptr == NULL)
+		return (NULL);
+
 	while (*str)
 	{
 		*ptr = *str;
@@ -32,6 +35,13 @@ char *_strdup(char *str)
 	return (dup_str);
 	free(dup_str);
 }
+
+/**
+ * _strlen - gets the lenght of a string
+ * @s: string to be measure
+ * Return: Lenght
+ */
+
 int _strlen(char *s)
 {
 	int len = 0;
