@@ -9,53 +9,43 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int len;
-	int len2;
-	int i;
+	int len, len2, size;
+	int index;
+	int jindex;
 	char *ptr;
 
-	if (*s1 == 0)
+	if (s1 == 0)
 	{
-		printf(" ");
+		s1 = "";
+	}
+	if (s2 == 0)
+	{
+		s2 = "";
+	}
+	for (index = 0; s1[index] != '\0'; index++)
+	{
+	}
+	for (jindex = 0; s2[jindex] != '\0'; jindex++)
+	{
+		;
+	}
+
+	size = index + jindex + 1;
+	ptr = malloc(sizeof(char) * size);
+
+	if (ptr == 0)
+	{
 		return (NULL);
 	}
-	
-	if (*s1 == NULL)
+	for (len = 0; len < index; len++)
 	{
-		return (NULL);
+		ptr[len] = s1[len];
 	}
 
-	ptr = malloc(sizeof(char) * (_strlen(s1) + (_strlen(s2) + 1)));
-
-	for (len = 0; s1[len] != '\0'; len++)
+	for (len2 = 0; len2 < jindex; len++, len2++)
 	{
-		ptr[i] = s1[len];
-		i++;
+		ptr[len] = s2[len2];
 	}
-
-	for (len2 = 0; s2[len2] != '\0'; len2++)
-	{
-		ptr[i] = s2[len2];
-		i++;
-	}
-	ptr[i] = '\0';
+	ptr[index + jindex] = '\0';
 	return (ptr);
-}
-
-/**
- * _strlen - count the lenght of a string
- * @s: string to measure
- * Return: Lenght of stirng
- */
-
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (*s != '\0')
-	{
-		i++;
-		s++;
-	}
-	return (i);
 }
