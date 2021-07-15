@@ -31,8 +31,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	sum = len1 + n;
 
-	tmp = malloc(sizeof(char) * sum);
-	if (tmp == 0)
+	tmp = malloc(sizeof(char) * sum + 1);
+	if (tmp == NULL)
 		return (NULL);
 	for (i = 0; i < len1; i++)
 	{
