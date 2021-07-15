@@ -10,12 +10,12 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j, len1, len2, sum;
+	unsigned int i, len1, len2, sum;
 	char *tmp;
 
-	if (s1 == NULL)
+	if (s1 == 0)
 		s1 = "";
-	if (s2 == NULL)
+	if (s2 == 0)
 		s2 = "";
 	for (len1 = 0; s1[len1] != '\0'; len1++)
 		;
@@ -27,25 +27,24 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		sum = len1 + n;
 
 	tmp = malloc(sizeof(char) * sum + 1);
-	if (tmp == NULL)
-		return (NULL);
+	if (tmp == 0)
+		return (0);
 	for (i = 0; i < len1; i++)
 	{
 		tmp[i] = s1[i];
 	}
 	if (n < len2)
-		for (j = 0; j < n; j++)
+		for (len2 = 0; len2 < n; len2++)
 		{
-			tmp[i] = s2[j];
+			tmp[i] = s2[len2];
 			i++;
 		}
 	else
-		for (j = 0; s2[j] != '\0'; j++)
+		for (len2 = 0; s2[len2] != '\0'; len2++)
 		{
-			tmp[i] = s2[j];
+			tmp[i] = s2[len2];
 			i++;
 		}
 	tmp[i] = '\0';
-
 	return (tmp);
 }
