@@ -19,6 +19,7 @@ struct dog
 	char *owner;
 	float age;
 };
+typedef struct dog dog_t;
 
 /* Prototypes Functions */
 
