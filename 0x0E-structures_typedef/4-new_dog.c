@@ -10,8 +10,9 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *my_dog = malloc(sizeof(dog_t));
+	dog_t *my_dog;
 
+	my_dog = malloc(sizeof(dog_t));
 	if (my_dog == NULL)
 	{
 		return (NULL);
@@ -48,7 +49,7 @@ int _strlen(char *s)
 	{
 		;
 	}
-	return (i);
+	return (i + 1);
 }
 
 /**
@@ -65,12 +66,12 @@ char *_strcpy(char *s)
 
 	if (scopy == NULL)
 	{
-		free(scopy);
 		return (NULL);
 	}
-	for (i = 0; i <= len; i++)
+	for (i = 0; i < len; i++)
 	{
 		scopy[i] = s[i];
 	}
+
 	return (scopy);
 }
