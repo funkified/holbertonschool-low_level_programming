@@ -10,34 +10,41 @@
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new;
-	list_t *tmp;
-	int i;
+	list_t *end_node;
+	int i = 0;
+
+	if (str == NULL)
+		return (NULL);
+	if (strdup(str) == NULL)
+	{
+		return (NULL);
+	}
 
 	new = malloc(sizeof(list_t));
 
 	if (new == NULL)
+	{
 		return (NULL);
-	if (str == NULL)
-	{
-		new->str = NULL;
-		new->len = 0;
 	}
-	else
-	{
-		for (i = 0; str[i]; i++)
-			;
-		new->str = strdup(str);
-		new->len = i;
-	}
+	for (i = 0; str[i] != '\0'; i++)
+		;
+	new->str = strdup(str);
+	new->len = i;
 	new->next = NULL;
 
 	if (*head == NULL)
+	{
 		*head = new;
+	}
 	else
-		while (tmp->next != NULL)
-			tmp = tmp->next;
-	(tmp)->next = new;
-
+	{
+		end_node = *head;
+		while (end_node->next != NULL)
+		{
+			end_node = end_node->next;
+		}
+		end_node->next = new;
+	}
 	return (new);
 }
 
