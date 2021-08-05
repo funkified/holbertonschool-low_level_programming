@@ -1,39 +1,37 @@
-#include "holberton.h"
-#include <math.h>
-/**
- * binary_to_uint - function thtat convert a binarynumber to an unsigned int
- * @b: pointer to a string of 0 and 1 chars
- * Return: int num, or 0 if 1 or more char in the string b thats not 0 or 1
- * or NUll is b
- */
+#include "main.h"
 
+/**
+ * binary_to_uint - convert a binary number to an unsigened int
+ * @b: pointer to a string of 0 and 1 charsh
+ * Return: the converted number or 0 ir theres 1 or more chars thats not 0 or 1
+ */
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int i = 0;
+	int idx = 0;
+	int pow = 1;
+	unsigned int res = 0;
 
 	if (b == NULL)
-	{
 		return (0);
-	}
-	else
+	while (b[idx] != '\0')
 	{
-		while (*b)
-		{
-			if (*b == '1')
-			{
-				i = ((i * 2) + 1);
-			}
-			else if (*b == '0')
-			{
-				i = ((i * 2));
-			}
-			else
-			{
-				return (0);
-			}
-			b++;
-		}
+		idx++;
 	}
-	return (i);
+	idx -= 1;
+
+	while (idx >= 0)
+	{
+		if (b[idx] != '0' && b[idx] != '1')
+		{
+			return (0);
+		}
+		if (b[idx] == '1')
+		{
+			res += pow;
+		}
+		pow = pow * 2;
+		idx--;
+	}
+	return (res);
 }
