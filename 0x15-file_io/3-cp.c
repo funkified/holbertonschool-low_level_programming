@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * main - copies the content of a file into another
  * @argc: fisrst argument
@@ -17,7 +17,6 @@ int main(int argc, char *argv[])
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
-	}
 	file_to = open(argv[2], O_TRUNC | O_CREAT | O_WRONLY, 0664);
 
 	if (file_to == -1)
@@ -32,7 +31,8 @@ int main(int argc, char *argv[])
 		}
 		if (file_from == -1 || write(file_to, buffer, _read) != _read)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
 		}
 	}
 	copy_to = close(file_from);
@@ -44,5 +44,6 @@ int main(int argc, char *argv[])
 
 	if (copy_from == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file_to), exit(100);
+	}
 	return (0);
 }
