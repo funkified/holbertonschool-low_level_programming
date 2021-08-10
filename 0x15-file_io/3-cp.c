@@ -36,10 +36,10 @@ int main(int argc, char *argv[])
 		}
 	}
 	if (close(file_from) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file_from),
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", argv[1]),
 			exit(100);
 	if (close(file_to) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file_to),
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", argv[2]),
 			exit(100);
 	return (0);
 }
