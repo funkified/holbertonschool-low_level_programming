@@ -29,19 +29,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		if (count == idx)
 		{
-			new->prev = temp; /*curretn prev to back link */
-			new->next = temp->next; /* curretn next to front to fron link */
-			temp->next = new; /* back next link */
-			new->next->prev = new; /*from prev link */
+			new->prev = temp;
+			new->next = temp->next;
+			temp->next = new;
+			new->next->prev = new;
 		}
 		temp = temp->next;
 		count++;
 	}
-	if (count == idx) /* end of DLL */
+	if (count == idx)
 	{
-		new->prev = temp; /* curretn prev to back link */
-		new->next = NULL; /* current next to NULL*/
-		temp->next = new; /* bak next to link */
+		new->prev = temp;
+		new->next = NULL;
+		temp->next = new;
 	}
 	if (count < idx)
 	{
