@@ -5,15 +5,18 @@
 def island_perimeter(grid):
     """ returns perimeter"""
     perimeter = 0
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
-            if grid[i][j] == 1:
-                if i == 0 or grid[i - 1][j] == 0:
+    r_max = len(grid)
+    c_max = len(grid[0])
+
+    for r in range(r_max):
+        for c in range(c_max):
+            if grid[r][c] == 1:
+                if r == r_max - 1 or grid[r + 1][c] == 0:
                     perimeter += 1
-                if i == len(grid) - 1 or grid[i - 1][j] == 0:
+                if r == 0 or grid[r - 1][c] == 0:
                     perimeter += 1
-                if j == 0 or grid[i][j - 1] == 0:
+                if c == c_max - 1 or grid[r][c + 1] == 0:
                     perimeter += 1
-                if j == len(grid[i]) - 1 or grid[i][j + 1] == 0:
+                if c == 0 or grid[r][c - 1] == 0:
                     perimeter += 1
-    return (perimeter)
+    return perimeter
