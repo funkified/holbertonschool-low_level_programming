@@ -15,14 +15,15 @@ int interpolation_search(int *array, size_t size, int value)
 	low = 0;
 	high = size - 1;
 
-	if (!array)
+	pos = low + (((double)(high - low) / (array[high] - array[low]))
+			* (value - array[low]));
+
+	if (!array || high > size)
 		return (-1);
 
 	for (i = 0; array[high] != array[low] && value >= array[low]
 			&& value <= array[high]; i++)
 	{
-		pos = low + (((double)(high - low) / (array[high] - array[low]))
-				* (value - array[low]));
 		printf("Value checked array[%lu] = [%d]\n", pos, array[pos]);
 		if (value == array[pos])
 			return (pos);
